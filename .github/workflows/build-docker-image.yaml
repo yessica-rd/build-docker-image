@@ -1,0 +1,19 @@
+name: Build docker image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build -t test-image .
+
+      - name: Inspect image
+        run: |
+          docker image inspect test-image
