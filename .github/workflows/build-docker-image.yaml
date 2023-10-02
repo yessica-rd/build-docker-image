@@ -43,10 +43,6 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-    - name: Inspect
-      run: |
-        docker image inspect my-docker-image:latest  
-
     - name: Run pytest
       run: |
         docker run --rm my-docker-image pytest -v
