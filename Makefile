@@ -41,7 +41,7 @@ develop:
 	$(SAGE_BIN) -pip install --upgrade -e .
 
 remote-pytest:
-	pytest -v -n=auto tests/unit/
+	pytest -v -n=auto test/unit/
 
 pytest:
 	pytest -v -n=auto --dist loadfile tests/unit/
