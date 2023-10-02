@@ -6,14 +6,20 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Build image
-        run: docker build -t test-image .
+    - name: Build Docker image
+      run: docker build -t my-docker-image .
 
-      - name: Inspect image
-        run: |
-          docker image inspect test-image
+    - name: Inspect
+      run: |
+        docker image inspect my-docker-image:latest  
+
+    - name: Run pytest
+      run: |
+        docker run --rm my-docker-image pytest -v
