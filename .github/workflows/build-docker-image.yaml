@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v4
       id: built-image
       with:
-        context: .
+        context: ./docker
         file: ./docker/Dockerfile
         push: false
         load: true
