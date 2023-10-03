@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v4
         id: built-image
         with:
-          context: .
+          context: ./docker
           push: false
           load: true
           tags: claasp-lib:latest
