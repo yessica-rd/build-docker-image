@@ -3,7 +3,7 @@ name: Build docker image
 on:
   push:
     branches:
-      - test/claasp-image-gh-creation
+      - test/claasp-with-dockerhub-image-2
 
 jobs:
   build-and-test:
